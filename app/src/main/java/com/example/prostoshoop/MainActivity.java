@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         userNameEditText = findViewById(R.id.nameEditText);
 
-//        createSpinner();
-//        createMap();
+        createSpinner();
+        createMap();
     }
 
     void createSpinner() {
@@ -42,7 +42,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList();
 
-        spinnerArrayList.add("tshirt");
+        spinnerArrayList.add("tshort");
+        spinnerArrayList.add("jacket");
+        spinnerArrayList.add("sweater");
+
         spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
@@ -104,5 +107,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    public void addToCart(View view) {
+        Order order = new Order();
+
+        order.userName = userNameEditText.getText().toString();
+
+        order.goodsName = goodsName;
+
+        order.quantity = quantity;
+
+        order.price = price;
+
+        order.orderPrice = quantity * price;
+
+
+
+    }
+
 
 }
