@@ -109,20 +109,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
     public void addToCart(View view) {
         Order order = new Order();
-
         order.userName = userNameEditText.getText().toString();
-
         order.goodsName = goodsName;
-
         order.quantity = quantity;
-
         order.price = price;
-
         order.orderPrice = quantity * price;
-
-
-
     }
-
-
 }
